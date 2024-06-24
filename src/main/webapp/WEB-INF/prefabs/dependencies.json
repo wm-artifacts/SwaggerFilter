@@ -1,0 +1,17 @@
+[ {
+  "name" : "MSD",
+  "version" : "1.0.0",
+  "platformVersion" : null,
+  "publisherId" : null,
+  "publisherName" : null,
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "MultiSelectDropdown",
+  "version" : "1.0.3",
+  "platformVersion" : null,
+  "publisherId" : "ent1266435ea097",
+  "publisherName" : "marketplace",
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+} ]

@@ -1,0 +1,99 @@
+{
+  "mvSampleData" : {
+    "_id" : "wm-mvSampleData-wm.Variable-1689747022616",
+    "name" : "mvSampleData",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "deptId" : 1,
+      "name" : "Engineering",
+      "budget" : 1936760,
+      "q1" : 445455,
+      "q2" : 522925,
+      "q3" : 426087,
+      "q4" : 542293,
+      "deptCode" : "Eng",
+      "location" : "San Francisco",
+      "tenantId" : 1
+    }, {
+      "deptId" : 2,
+      "name" : "Marketing",
+      "budget" : 1129777,
+      "q1" : 225955,
+      "q2" : 271146,
+      "q3" : 327635,
+      "q4" : 305040,
+      "deptCode" : "Mktg",
+      "location" : "New York",
+      "tenantId" : 1
+    }, {
+      "deptId" : 3,
+      "name" : "General and Admin",
+      "budget" : 1452570,
+      "q1" : 435771,
+      "q2" : 290514,
+      "q3" : 348617,
+      "q4" : 377668,
+      "deptCode" : "G&amp;A",
+      "location" : "San Francisco",
+      "tenantId" : 1
+    }, {
+      "deptId" : 4,
+      "name" : "Sales",
+      "budget" : 2743744,
+      "q1" : 493874,
+      "q2" : 658499,
+      "q3" : 713373,
+      "q4" : 877998,
+      "deptCode" : "Sales",
+      "location" : "Austin",
+      "tenantId" : 1
+    }, {
+      "deptId" : 5,
+      "name" : "Professional Services",
+      "budget" : 806984,
+      "q1" : 201746,
+      "q2" : 201746,
+      "q3" : 177536,
+      "q4" : 225955,
+      "deptCode" : "PS",
+      "location" : "San Francisco",
+      "tenantId" : 2
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "stvSample" : {
+    "_id" : "wm-stvSample-wm.Variable-1599813818722",
+    "name" : "stvSample",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "displayValue" : "India",
+      "dataValue" : "ind"
+    }, {
+      "displayValue" : "Germany",
+      "dataValue" : "ger"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  }
+}

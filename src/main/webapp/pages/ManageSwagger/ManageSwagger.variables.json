@@ -1,0 +1,161 @@
+{
+  "jsDeleteSwaggerFIle" : {
+    "_id" : "wm-jsDeleteSwaggerFIle-wm.ServiceVariable-1689947074124",
+    "name" : "jsDeleteSwaggerFIle",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "object",
+    "service" : "S3FileManager",
+    "operation" : "deleteFile",
+    "operationId" : "S3fileManagerController_deleteFile",
+    "operationType" : "delete",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "S3fileManager"
+  },
+  "jsFileUploadService" : {
+    "_id" : "wm-jsFileUploadService-wm.ServiceVariable-1689681857918",
+    "name" : "jsFileUploadService",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : true,
+      "target" : "files",
+      "value" : "bind:Widgets.fileuploadSwagger.selectedFiles",
+      "type" : "file"
+    } ],
+    "type" : "com.wavemaker.swaggerfilter.fileservice.FileService.FileUploadResponse",
+    "service" : "FileService",
+    "operation" : "uploadFile",
+    "operationId" : "FileController_uploadFile",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "jsFileUploadServiceonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "File"
+  },
+  "jsUploadSwaggerFileToS3" : {
+    "_id" : "wm-jsUploadSwaggerFileToS3-wm.ServiceVariable-1689945286256",
+    "name" : "jsUploadSwaggerFileToS3",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "file",
+      "value" : "bind:Widgets.fileuploadSwagger.selectedFiles",
+      "type" : "file"
+    } ],
+    "type" : "com.wavemaker.swaggerfilter.model.FileDetails",
+    "service" : "S3FileManager",
+    "operation" : "uploadSwaggerFileToS3",
+    "operationId" : "S3fileManagerController_uploadSwaggerFileToS3",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "jsUploadSwaggerFileToS3onSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "S3fileManager"
+  },
+  "nfErrorSwaggerDownloadAction" : {
+    "_id" : "wm-nfErrorSwaggerDownloadAction-wm.NotificationVariable-1689836933535",
+    "name" : "nfErrorSwaggerDownloadAction",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "Error while downloading update swagger, please check the logs.",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "3000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "bottom right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "nfSwaggerDownloadAction" : {
+    "_id" : "wm-nfSwaggerDownloadAction-wm.NotificationVariable-1689836800108",
+    "name" : "nfSwaggerDownloadAction",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "Updated swagger file downloaded successfully",
+      "type" : "string"
+    }, {
+      "target" : "class",
+      "value" : "Success",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "bottom right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "stvSelectedSwaggerEndPoints" : {
+    "_id" : "wm-stvSelectedSwaggerEndPoints-wm.Variable-1689783408998",
+    "name" : "stvSelectedSwaggerEndPoints",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "path" : "",
+      "method" : ""
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "stvSwaggerEndPoints" : {
+    "_id" : "wm-stvSwaggerEndPoints-wm.Variable-1689677908252",
+    "name" : "stvSwaggerEndPoints",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "path" : "",
+      "method" : ""
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

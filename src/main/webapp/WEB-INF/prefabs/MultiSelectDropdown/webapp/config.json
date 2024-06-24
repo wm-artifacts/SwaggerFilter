@@ -1,0 +1,84 @@
+{
+  "displayName" : "MultiSelectDropdown",
+  "group" : "",
+  "iconUrl" : "/resources/images/imagelists/prefab-icon.png",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ ]
+  },
+  "properties" : {
+    "dataset" : {
+      "type" : "object",
+      "displayName" : "Dataset",
+      "description" : "input data to the multiselect dropdown",
+      "bindable" : "in-out-bound",
+      "isList" : true,
+      "value" : "bind:Variables.mvSampleData.dataSet",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "displayfield" : {
+      "type" : "string",
+      "displayName" : "Displayfield",
+      "description" : "select the field to be displayed",
+      "bindable" : "in-out-bound",
+      "value" : "",
+      "widget" : "list",
+      "options" : "bind:widgetProps.dataset.keys",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "defaultvalue" : {
+      "type" : "object",
+      "displayName" : "Defaultvalue",
+      "description" : "add the default that you would like to set it as default",
+      "bindable" : "in-bound",
+      "isList" : true,
+      "value" : "",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "selecteddropdownlist" : {
+      "type" : "object",
+      "displayName" : "Selecteddropdownlist",
+      "description" : "list of selected options of the dropdown",
+      "bindable" : "in-out-bound",
+      "isList" : true,
+      "value" : "bind:Widgets.checkboxsetOptions.datavalue",
+      "widget" : "string",
+      "show" : true,
+      "showAt" : "",
+      "disabled" : false
+    },
+    "groupby" : {
+      "type" : "string",
+      "displayName" : "Groupby",
+      "description" : "add field to Group by",
+      "bindable" : "in-out-bound",
+      "widget" : "list",
+      "options" : "bind:widgetProps.dataset.keys",
+      "show" : true,
+      "disabled" : false
+    }
+  },
+  "events" : {
+    "onChange" : {
+      "description" : "Callback action which will be triggered on change of the prefab.",
+      "eventData" : "",
+      "displayName" : "Change"
+    }
+  },
+  "methods" : {
+    "clearSelectedData" : {
+      "description" : "Method to clear selected data of checkboset",
+      "parameters" : [ ],
+      "returnType" : "void",
+      "example" : ""
+    }
+  }
+}

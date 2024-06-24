@@ -1,0 +1,103 @@
+<wm-page name="mainpage" pagetitle="Main">
+    <wm-header content="header" name="header" height="auto"></wm-header>
+    <wm-content name="content">
+        <wm-page-content columnwidth="12" name="mainContent">
+            <wm-wizard stepstyle="justified" class="number max-height" name="wizardSwaggerFilter" donebtnlabel="Download" on-done="wizardSwaggerFilterDone(widget, steps)" show="true" on-cancel="wizardSwaggerFilterCancel(widget, steps)" actionsalignment="right" defaultstep="wizardstetUploadSwagger">
+                <wm-wizardstep name="wizardstetUploadSwagger" title="Upload Swagger" iconclass="" on-load="wizardstetUploadSwaggerLoad(widget, stepIndex)">
+                    <wm-layoutgrid name="layoutgrid3_1">
+                        <wm-gridrow name="gridrow4">
+                            <wm-gridcolumn columnwidth="3" name="gridcolumn9"></wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn5">
+                                <wm-container name="containerUploadSwagger" horizontalalign="center" class="upload-container" margin="5em unset 3em unset">
+                                    <wm-label padding="unset" name="labelSwaggerFile" class="h4" caption="Upload the swagger file" fontweight="bold" show="false"></wm-label>
+                                    <wm-fileupload cleariconclass="wi wi-clear" cleariconhint="Clear" name="fileuploadSwagger" on-select="Variables.jsUploadSwaggerFileToS3.invoke()" contenttype=".json .yaml" iconclass="wm-sl-r sl-upload-1 fa-5x" caption="Choose a file or drag it here."
+                                        class="drop-box hide-status" show="bind:!Widgets.fileuploadSwagger.datasource.dataSet.fileName" deferload="true"></wm-fileupload>
+                                    <wm-container name="container4" show="bind:Widgets.fileuploadSwagger.datasource.dataSet.fileName" deferload="true" margin="5em unset unset unset">
+                                        <wm-label padding="unset" name="label7" class="h6" caption="Uploaded file"></wm-label>
+                                        <wm-container name="containerClearFile" display="inline-flex" margin="0.5em unset unset unset" show="true" class="bg-highlight img-rounded p-sm">
+                                            <wm-label padding="unset" name="labelFileName" caption="bind:inputSwaggerFileName" class="h3"></wm-label>
+                                            <wm-button class="btn-danger btn-fab btn-sm" caption="" type="button" name="buttonClearFile" iconclass="wi wi-close fa-lg" width="30" height="30" on-click="buttonClearFileClick($event, widget)" margin="-25px -25px unset unset"></wm-button>
+                                        </wm-container>
+                                    </wm-container>
+                                </wm-container>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="3" name="gridcolumn6_1"></wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-wizardstep>
+                <wm-wizardstep name="wizardstepEndPoints" title="Select Endpoints" iconclass="" on-load="wizardstepEndPointsLoad(widget, stepIndex)">
+                    <wm-container name="container3">
+                        <wm-layoutgrid name="layoutgrid3">
+                            <wm-gridrow name="gridrow3_1">
+                                <wm-gridcolumn columnwidth="4" name="gridcolumn3">
+                                    <wm-label padding="unset" name="labelEndPointsCount" on-click="label3Click($event, widget)" caption="bind:'Total End Points : '+Variables.stvSwaggerEndPoints.dataSet.length" class="h4"></wm-label>
+                                </wm-gridcolumn>
+                                <wm-gridcolumn columnwidth="4" name="gridcolumn10">
+                                    <wm-label padding="unset" on-click="label3Click($event, widget)" caption="bind:'End Points Selected : ' + Variables.stvSelectedSwaggerEndPoints.dataSet.length" name="labelSelectedEndPoints" class="h4"></wm-label>
+                                </wm-gridcolumn>
+                                <!--<wm-gridcolumn columnwidth="3" name="gridcolumn10_1" horizontalalign="left">-->
+                                <!--    <wm-container name="container8" display="inline-flex" show="true">-->
+                                <!--        <wm-label padding="unset" show="true" deferload="false" class="small text-muted" caption="Group By" margin="8px 4px unset unset" name="label12"></wm-label>-->
+                                <!--        <wm-container name="container7" display="inline-flex">-->
+                                <!--            <wm-label class="h4" name="label9" caption="Type" conditionalclass="bind:Widgets.toggle1.datavalue == 'type' ? 'text-primary':''"></wm-label>-->
+                                <!--            <wm-checkbox caption="Toggle" type="toggle" name="toggle1" on-change="toggle1Change($event, widget, newVal, oldVal)" checkedvalue="method" uncheckedvalue="type" margin="-3px unset unset unset" datavalue="type"></wm-checkbox>-->
+                                <!--            <wm-label padding="unset" name="label11" caption="Method" class="h4" conditionalclass="bind:Widgets.toggle1.datavalue == 'method' ? 'text-secondary':''"></wm-label>-->
+                                <!--        </wm-container>-->
+                                <!--    </wm-container>-->
+                                <!--</wm-gridcolumn>-->
+                                <wm-gridcolumn columnwidth="4" name="gridcolumn7_1" horizontalalign="right">
+                                    <wm-container name="container5" show="true" horizontalalign="right" display="inline-block">
+                                        <wm-label padding="unset" name="label8" show="bind:isEndpointsCached" deferload="false" class="text-muted small" caption="modify your selection" margin="unset 0.5em unset unset"></wm-label>
+                                        <wm-checkbox caption="bind:'Select All'" name="checkboxSelectUnslectAll" on-change="checkboxSelectUnslectAllChange($event, widget, newVal, oldVal)" datavalue="bind:Variables.stvSwaggerEndPoints.dataSet.length > 0 ? (Variables.stvSelectedSwaggerEndPoints.dataSet.length ==  Variables.stvSwaggerEndPoints.dataSet.length) : ''"
+                                            margin="0px unset"></wm-checkbox>
+                                    </wm-container>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                            <wm-gridrow name="gridrow6_1" padding="1em unset unset unset">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn12">
+                                    <wm-checkboxset height="44vh" name="checkboxsetEndPoints" dataset="bind:Variables.stvSwaggerEndPoints.dataSet" datafield="All Fields" displayfield="path" groupby="method" itemsperrow="xs-1 sm-1 md-2 lg-3" orderby="type:desc" required="true" class="sticky-group-header"
+                                        datavalue="bind:Variables.stvSelectedSwaggerEndPoints.dataSet" on-click="checkboxsetEndPointsClick($event, widget)"></wm-checkboxset>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                    </wm-container>
+                </wm-wizardstep>
+                <wm-wizardstep name="wizardstepSelectedEndPoints" title="Download Swagger" iconclass="" on-load="wizardstepSelectedEndPointsLoad(widget, stepIndex)">
+                    <wm-layoutgrid name="layoutgrid7">
+                        <wm-gridrow name="gridrow8">
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn15"></wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn16" horizontalalign="right">
+                                <wm-container name="container7" display="inline-flex">
+                                    <wm-label name="label14" caption="Choose File Type : " padding="6px unset unset unset" margin="unset 8px unset unset"></wm-label>
+                                    <wm-container name="container9">
+                                        <wm-select name="selectFileType" dataset="json, yaml" datavalue="json" datafield="All Fields" placeholder="" on-change="selectFileTypeChange($event, widget, newVal, oldVal)" autofocus="false" textalign="left" required="true"></wm-select>
+                                    </wm-container>
+                                </wm-container>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                    <wm-layoutgrid name="layoutgrid4">
+                        <wm-gridrow name="gridrow5">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn6">
+                                <wm-label padding="unset" on-click="label3Click($event, widget)" caption="bind:'Selected End Points : '+Variables.stvSelectedSwaggerEndPoints.dataSet.length" name="labelSwaggerSelectedEndPoints" class="h4"></wm-label>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow6" padding="1em unset unset unset">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn8">
+                                <wm-list listclass="list-group" itemclass="list-group-item no-border" template="true" template-name="Contact List" itemsperrow="xs-1 sm-1 md-2 lg-3" class="media-list sticky-group-header" datafield="All Fields" statehandler="URL" name="stvSelectedSwaggerEndPointsList"
+                                    dataset="bind:Variables.stvSelectedSwaggerEndPoints.dataSet" navigation="None" groupby="method" height="44vh" disableitem="true" collapsible="true" showcount="true">
+                                    <wm-listtemplate layout="inline" name="listtemplate1">
+                                        <wm-label name="Name" caption="bind:Widgets.stvSelectedSwaggerEndPointsList.currentItem.path" fontunit="em"></wm-label>
+                                    </wm-listtemplate>
+                                </wm-list>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-wizardstep>
+            </wm-wizard>
+            <wm-spinner show="false" name="spinnerDownload" caption="Downloading..."></wm-spinner>
+            <wm-spinner show="false" name="spinnerSwaggerFileUpload" caption="Uploading..." servicevariabletotrack="jsUploadSwaggerFileToS3" animation="bounce" iconclass="wm-sl-r sl-upload-2"></wm-spinner>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer name="footer" content="footer"></wm-footer>
+</wm-page>

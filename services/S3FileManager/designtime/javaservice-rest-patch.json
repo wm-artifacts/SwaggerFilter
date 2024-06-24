@@ -1,0 +1,98 @@
+{
+  "description" : null,
+  "methods" : {
+    "deleteFile" : [ {
+      "url" : {
+        "value" : "/file",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "DELETE",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : {
+        "s3KeyName" : {
+          "name" : {
+            "value" : "s3KeyName",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "QUERY",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        }
+      }
+    } ],
+    "downloadFile" : [ {
+      "url" : {
+        "value" : "/downloadFile",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "GET",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : {
+        "s3KeyName" : {
+          "name" : {
+            "value" : "s3KeyName",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "QUERY",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        }
+      }
+    } ],
+    "listObjects" : [ {
+      "url" : {
+        "value" : "/objects",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "GET",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : { }
+    } ],
+    "uploadSwaggerFileToS3" : [ {
+      "url" : {
+        "value" : "/uploadSwaggerFileToS3",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "POST",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : {
+        "file" : {
+          "name" : {
+            "value" : "file",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "FORM",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        }
+      }
+    } ]
+  }
+}

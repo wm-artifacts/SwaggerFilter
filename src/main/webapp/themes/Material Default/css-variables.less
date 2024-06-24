@@ -1,0 +1,349 @@
+// CSS Variables 
+/*=========
+css variables doesn't support by less functions to generate lighten, darken, fade, etc.
+We are using color-mix function of css variables.
+ex: color-mix(in srgb, color1 50%, color2 30%)
+// Note: As less doesn't support css funsctions all the css funcions should be with less excepetion to support.
+// ex: ~"calc(100vh - 50px)" instead of calc(100vh - 50px) //
+// ex: ~"color-mix(in srgb, color1 50%, color2 30%)" instead of color-mix(in srgb, color1 50%, color2 30%) //
+=========*/
+:root{
+    /*----standard color variables------*/
+    //primary
+    --brand-primary:                    rgba(101, 109, 249, 1);
+    --brand-primary-lighten:            ~"color-mix(in srgb, var(--brand-primary), #fff 20%)";
+    --brand-primary-darken:             ~"color-mix(in srgb, var(--brand-primary), #000 30%)";
+    --brand-primary-o:                  ~"color-mix(in srgb, var(--brand-primary), transparent 88%)";
+    --primary-bg-text:                  rgba(255, 255, 255, 1);
+    --primary-bg-gradient:              linear-gradient(257deg, ~"color-mix(in srgb, var(--brand-primary), #000 50%)", var(--brand-primary));
+    --primary-label-border:             rgba(255, 255, 255, 0.4);
+
+    //secondary
+    --brand-secondary:                  rgba(255, 150, 66, 1);
+    --brand-secondary-lighten:          ~"color-mix(in srgb, var(--brand-secondary), #fff 20%)";
+    --brand-secondary-darken:           ~"color-mix(in srgb, var(--brand-secondary), #000 30%)";
+    --brand-secondary-o:                ~"color-mix(in srgb, var(--brand-secondary), transparent 90%)";
+    --brand-secondary2-o:               rgba(255, 111, 81, 0.1);
+    --brand-secondary-dark:             rgba(250, 100, 50, 1);
+    --secondary-bg-text:                rgba(255, 255, 255, 1);
+    --secondary-bg-gradient:            linear-gradient(253deg, ~"color-mix(in srgb, var(--brand-secondary), #000 30%)", var(--brand-secondary));
+    --secondary-text-gradient:          var(--secondary-bg-gradient);
+
+    //tertiary
+    --brand-tertiary:                   rgba(255, 216, 141, 1);
+    --brand-tertiary-text:              rgba(244, 177, 49, 1);
+    --brand-tertiary-bg:                #ffffff;//rgba(255, 216, 141, 0.2);
+    --brand-tertiary-bg-active:         rgba(255, 216, 141, 1);
+    --brand-tertiary-border:            var(--brand-tertiary);
+
+    //success
+    --brand-success:                    #77CF33;
+    --brand-success-o:                  rgba(8, 197, 138, 0.1);
+    --brand-success2:                   #77CF33;
+    --success-bg-text:                  rgba(255, 255, 255, 1);
+
+    //info
+    --brand-info:                       #00a2ff;
+    --brand-info-o:                     rgba(118, 132, 252, 0.1);
+    --brand-info2:                      #51aaf2;
+    --brand-info2-o:                    #97afff;
+    --info-bg-text:                     rgba(255, 255, 255, 1);
+
+    //warning
+    --brand-warning:                    #ff8650;
+    --brand-warning-o:                  rgba(255, 134, 80, 0.1);
+    --brand-warning2:                   #da591d;
+    --brand-warning2-o:                 rgba(206, 84, 27, 0.1);
+    --warning-bg-text:                  rgba(255, 255, 255, 1);
+    //danger
+    --brand-danger:                     #ec477c;
+    --brand-danger2:                    #fb587b;
+    --brand-danger2-o:                  rgba(251, 88, 123, 0.1);
+    --danger-bg-text:                   rgba(255, 255, 255, 1);
+
+    //default
+    --brand-default:                    #ffffff;
+    --default-bg-text:                  #979aa4;
+    --default-border:                   #c5c7ce;
+
+    //disabled
+    --brand-disabled-bg:                #D4D4D4;
+    --brand-disabled-text:              #333333;
+
+    //basic colors
+    --body-bg:                          rgba(250, 251, 254, 1);
+    --text-color:                       rgba(31, 43, 87, 1);
+    --text-muted:                       rgba(31, 43, 87, 0.5);
+    --text-invert:                      rgba(255, 255, 255, 1);
+    --headings-color:                   rgba(31, 43, 87, 1);
+
+    //** Global textual link.
+    --link-color:                       #2c5ccc;
+    --link-hover-color:                 ~"color-mix(in srgb, var(--link-color), #000 20%)";
+
+    // common things
+    --filter-text:                      #171717;
+    --active-text-muted:                rgba(23, 23, 23, 1);
+    --active-text-muted-7:              rgba(23, 23, 23, 0.7);
+    --seperator-color:                  #999999;
+    --seperator-bg-color:               rgba(247, 247, 247, 0.2);
+    --bg-highlight:                     rgba(123, 152, 250, 0.1);
+    --active-text-gradient:             linear-gradient(143deg, var(--brand-primary) 50%, var(--brand-primary-darken) 105%);
+    --active-bg-gradient:               linear-gradient(179deg, var(--brand-primary) 50%, var(--brand-primary-darken) 111%);
+    --active-bg-gradient-o:             linear-gradient(123deg, var(--brand-primary-o) 50%, var(--brand-primary-o) 111%);
+    --info-bg-gradient:                 linear-gradient(140deg, var(--brand-info2) 8%, var(--brand-info2-o) 100%);
+    --border-color:                     #ebebeb;
+    --border-color-2:                   rgba(85, 79, 79, 0.2);
+    --border-color-3:                   rgba(247, 247, 247, 0.2);
+    --grid-header-text-color:           #888888;
+    --grid-header-border:               #f2f2f2;
+    --grid-header-bg:                   linear-gradient(to top, #fbfbfb, #f4f4f4 19%);
+    --grid-border:                      #f0eaea;
+    --grid-text-color:                  #35363b;
+    --grid-text-muted-color:            #838383;
+    --danger-bg-gradient:               linear-gradient(93deg, var(--brand-danger) 2%, var(--brand-danger2));
+    --primary-text-gradient:            linear-gradient(143deg, var(--brand-primary) 50%, var(--brand-primary-darken) 105%);
+    --tabs-border-gradient:             linear-gradient(92deg, var(--brand-primary) 50%, var(--brand-primary-darken) 95%);
+
+    /*----font size, line height, custom icon sizes variables----*/
+    //== font sizes
+    --h1:                               3.375rem;//54px;
+    --h1-line-height:                   4.625rem;//74px;
+    --h2:                               2.25rem;//36px;
+    --h2-line-height:                   3.125rem;//50px;
+    --h3:                               1.5rem;//24px;
+    --h3-line-height:                   2.25rem;//36px;
+    --h4:                               1.125rem;//18px;
+    --h4-line-height:                   1.6875rem;//27px;
+    --h5:                               0.9375rem;//15px;
+    --h5-line-height:                   1.375rem;//22px;
+    --h6:                               0.8125rem;//13px;
+    --h6-line-height:                   1.25rem;//20px;
+    --font-size-base:                   0.8125rem;//13px;
+    --font-size-base-line-height:       1.2188rem;//19.5px;
+    --large:                            1.25rem;//20px;
+    --large-line-height:                2rem;//32px;
+    --small:                            0.75rem;//12px;
+    --small-line-height:                1.375rem;//22px;
+
+    //== icon font 
+    --icon-font:                        'wmnew' !important;
+    --icon-xs:                          15px; 
+    --icon-sm:                          20px;
+    --icon-md:                          24px;
+    --icon-lg:                          32px;
+
+    //font family
+    --font-family-backup:               'Arial','sans-serif';
+    --font-family:                      'Lexend', sans-serif;
+    --font-weight-thin:                 100;
+    --font-weight-extralight:           200;
+    --font-weight-light:                300;
+    --font-weight-regular:              400;
+    --font-weight-medium:               500;
+    --font-weight-semibold:             600;
+    --font-weight-bold:                 700;
+    --font-weight-extrabold:            800;
+    --font-weight-black:                900;
+
+    //fonts weight
+    --h1-font-weight:                   var(--font-weight-semibold);
+    --h2-font-weight:                   var(--font-weight-semibold);
+    --h3-font-weight:                   var(--font-family-regular);
+    --h4-font-weight:                   var(--font-family-regular);
+    --h5-font-weight:                   var(--font-family-regular);
+    --h6-font-weight:                   var(--font-family-regular);
+    --body-font-weight:                 var(--font-weight-regular);
+
+
+    /*----Standard spacing values----*/
+    // default standard spacing values 0, 4, 8, 12, 16, 24, 48
+    --rule-space:                       4px;
+    --space-0:                          ~"calc(var(--rule-space) * 0)";//0px
+    --space-xs:                         ~"calc(var(--rule-space) * 1)";//4px
+    --space-sm:                         ~"calc(var(--rule-space) * 2)";//8px
+    --space-md:                         ~"calc(var(--rule-space) * 3)";//12px;
+    --space-lg:                         ~"calc(var(--rule-space) * 4)";//16px;
+    --space-xl:                         ~"calc(var(--rule-space) * 6)";//24px;
+    --space-2xl:                        ~"calc(var(--rule-space) * 12)";//48px;
+
+    /*----border variables----*/
+    --border-radius-base:               12px;
+    --border-radius-large:              ~"calc(var(--border-radius-base) * 2)";//24px
+    --border-radius-small:              ~"calc(var(--border-radius-base) * 0.5)";//6px
+
+
+    /*----picture/image sizes----*/
+    --logo-height:                      ~"calc(var(--rule-space) * 10)";//40px
+
+    /*----layouts/widgets/elements specific variables----*/
+    //header 
+    --header-height:                    ~"calc(var(--rule-space) * 21)";// 84px;
+    --header-padding:                   var(--space-md) var(--space-lg);
+    --header-bg:                        #FFFFFF;
+    --header-text-color:                rgba(31, 43, 87, 0.7);
+    --header-icon-color:                rgba(31, 43, 87, 1);
+    --header-active-text-color:         var(--brand-primary);
+    --header-active-icon-color:         var(--brand-primary);
+    --header-border:                    rgba(151, 151, 151, 0.2);
+
+    //footer 
+    --footer-height:                    auto;// ~"calc(var(--rule-space) * 4)";// 40px;
+    --footer-padding:                   var(--space-md) var(--space-lg);
+    --footer-bg:                        #FFFFFF;
+    --footer-text-color:                rgba(31, 43, 87, 0.7);
+    --footer-icon-color:                rgba(31, 43, 87, 1);
+    --footer-active-text-color:         var(--brand-primary);
+    --footer-active-icon-color:         var(--brand-primary);
+    --footer-border:                    rgba(151, 151, 151, 0.2);
+
+    //aside left and right panel
+    --aside-panel-bg:                   #ffffff;
+    --aside-panel-border:               rgba(245, 245, 247, 1);
+    --aside-panel-link-size:            12px;
+    --aside-panel-link-color:           rgba(31, 43, 87, 0.7);
+    --aside-panel-icon-size:            24px;
+    --aside-panel-icon-color:           rgba(134, 140, 161, 1);
+    --aside-panel-link-border:          #f4f4f4;
+    --aside-panel-link-active-color:    var(--brand-primary);
+    --aside-panel-link-active-bg:       linear-gradient(140deg, rgba(101, 109, 249, 0.05) 50%, rgba(238, 99, 144, 0.05) 111%);//transparent;
+    --aside-panel-icon-active-color:    linear-gradient(143deg, var(--brand-primary) 50%, ~"color-mix(in srgb, var(--brand-primary), #000 60%)" 105%);
+    --aside-panel-link-active-indicator:linear-gradient(179deg, var(--brand-secondary) 50%, ~"color-mix(in srgb, var(--brand-secondary), #000 20%)" 111%);
+
+    //page content
+    --page-content-spacing:             ~"calc(var(--rule-space) * 6)" ~"calc(var(--rule-space) * 9)";//24px 36px
+
+    //grid column spacing
+    --grid-col-spacing:                 ~"calc(var(--rule-space) * 2)"; //8px
+
+    //label next to label spacing
+    --label-2-label-spacing:            ~"calc(var(--rule-space) * 2)";//8px
+    
+    //label below label spacing
+    --label-below-spacing:              ~"calc(var(--rule-space) * 1)";//4px
+
+    //label next to any spacing
+    --label-next-any-spacing:           ~"calc(var(--rule-space) * 4)";//16px
+
+    //widget below widget spacing
+    --widget-below-widget-spacing:      ~"calc(var(--rule-space) * 4)";//16px
+
+    //widget next to widget spcaing
+    --widget-2-widget-spacing:          ~"calc(var(--rule-space) * 4)";//16px
+
+    //widget next to any spacing
+    --widget-2-any-spacing:             ~"calc(var(--rule-space) * 4)";//16px
+
+    //input variables
+    --input-height-base:                ~"calc(var(--rule-space) * 11)";//44px
+    --input-font-base:                  var(--h5);//15px
+    --input-height-large:               ~"calc(var(--rule-space) * 14)";//56px;
+    --input-height-small:               ~"calc(var(--rule-space) * 8)";//32px
+    --input-spacing:                    ~"calc(var(--rule-space) * 2)" ~"calc(var(--rule-space) * 4)";//8px 16px
+    --input-group-spacing:              ~"calc(var(--rule-space) * 2)" ~"calc(var(--rule-space) * 12)" ~"calc(var(--rule-space) * 2)" ~"calc(var(--rule-space) * 4)";//8px 48px 8px 16px
+    --input-addon-spacing:              ~"calc(var(--rule-space) * 2)" ~"calc(var(--rule-space) * 4)";//8px 16px
+    --select-spacing:                   0 ~"calc(var(--rule-space) * 8)" 0 ~"calc(var(--rule-space) * 4)";//0 32px 0 16px 
+    --text-area-spacing:                ~"calc(var(--rule-space) * 3)" ~"calc(var(--rule-space) * 4)";//12px 16px
+    --input-border-radius-base:         ~"calc(var(--rule-space) * 2)";//8px
+    --input-border-radius-large:        ~"calc(var(--input-border-radius-base) * 2)";//16px
+    --input-border-radius-small:        ~"calc(var(--input-border-radius-base) * 0.5)";//4px
+    --input-place-holder:               rgba(31, 43, 87, 0.5);
+
+    //== Buttons
+    --btn-min-width:                    113px;
+
+    --btn-height-base:                  ~"calc(var(--rule-space) * 11)";//44px
+    --btn-height-large:                 ~"calc(var(--rule-space) * 14)";//56px;
+    --btn-height-small:                 ~"calc(var(--rule-space) * 7)";//28px
+
+    --btn-border-radius-base:           ~"calc(var(--rule-space) * 2)";//8px
+    --btn-border-radius-large:          ~"calc(var(--input-border-radius-base) * 2)";//16px
+    --btn-border-radius-small:          ~"calc(var(--input-border-radius-base) * 0.5)";//4px
+
+    --btn-font-weight:                  var(--font-weight-regular);
+
+    --btn-default-color:                #8c8d91;//@text-color;
+    --btn-default-bg:                   #fff;
+    --btn-default-border:               #8c8d91;
+
+    --btn-primary-color:                #fff;
+    --btn-primary-bg:                   var(--brand-primary);
+    --btn-primary-border:               var(--brand-primary);   
+
+    --btn-success-color:                #fff;
+    --btn-success-bg:                   var(--brand-success);
+    --btn-success-border:               var(--brand-success);   
+
+    --btn-info-color:                   #fff;
+    --btn-info-bg:                      var(--brand-info);
+    --btn-info-border:                  var(--brand-info);  
+
+    --btn-warning-color:                #fff;
+    --btn-warning-bg:                   var(--brand-warning);
+    --btn-warning-border:               var(--brand-warning);  
+
+    --btn-danger-color:                 #fff;
+    --btn-danger-bg:                    var(--brand-danger);
+    --btn-danger-border:                var(--brand-danger);   
+    
+    --btn-secondary-color:              #fff;
+    --btn-secondary-bg:                 var(--brand-secondary);
+    --btn-secondary-border:             var(--brand-secondary);    
+
+    --btn-link-disabled-color:          transparent;
+
+
+    //modal styles
+    --modal-header-height:              ~"calc(var(--rule-space) * 15)";//60px
+
+    //scroll bar styles
+    --scroll-bar-width:                 4px;
+    --scroll-bar-height:                4px;
+    --scroll-bar-thumb:                 rgba(54, 61, 69, 0.2);
+    --scroll-bar-thumb-hover:           rgba(54, 61, 69, 0.5);
+    --scroll-bar-track:                 transparent;
+
+    //DataTable/app-grid styles
+    --app-grid-bg:                      rgba(255, 255, 255, 1);
+    --app-grid-border-radius:           ~"calc(var(--rule-space) * 3)";//12px
+    --app-grid-spacing:                 ~"calc(var(--rule-space) * 4)";//16px
+
+
+    //list app-list, app-livelist styles
+    --list-panel-bg:                    #ffffff;
+    --list-border-color:                #e7e7e7;//list border color
+
+
+    //wizard(or)stepper styles
+    --wizard-bg:                        #ffffff;
+
+
+    /*----Media queries breakpoints----*/
+    // Extra small screen / phone
+    --screen-xs: 480px;
+    // Small screen / tablet
+    --screen-sm: 768px;
+    // Medium screen / desktop
+    --screen-md: 992px;
+    // Large screen / wide desktop
+    --screen-lg: 1200px;
+
+    //== Pagination 
+    --pagination-color:                 var(--text-color);
+    --pagination-bg:                    #fff;
+    --pagination-border:                #ddd;
+
+    --pagination-hover-color:           var(--link-hover-color);
+    --pagination-hover-bg:              rgba(0,0,0,.1);
+    --pagination-hover-border:          #ddd;
+
+    --pagination-active-color:          #fff;
+    --pagination-active-bg:             var(--brand-primary);
+    --pagination-active-border:         #fff;
+
+    --pagination-disabled-color:        #777777;
+    --pagination-disabled-bg:           #fff;
+    --pagination-disabled-border:       #ddd;
+
+
+}

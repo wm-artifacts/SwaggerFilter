@@ -1,0 +1,18 @@
+{
+  "messages" : {
+    "LABLE_STORAGE_TYPE" : "localStorage",
+    "LABLE_OUTPUT_FILE_NAME" : "Update_Swagger_file",
+    "LABLE_S3_FOLDER_NAME" : "swaggerfilter/"
+  },
+  "formats" : {
+    "date" : "MMM d, y",
+    "time" : "h:mm:ss a",
+    "currency" : "USD"
+  },
+  "files" : {
+    "angular" : "en",
+    "fullCalendar" : null,
+    "moment" : null
+  },
+  "prefabMessages" : { }
+}

@@ -1,0 +1,8 @@
+{
+  "id" : "FileService",
+  "type" : "JavaService",
+  "packageNames" : [ "com.wavemaker.swaggerfilter.fileservice" ],
+  "serviceClassNames" : [ "com.wavemaker.swaggerfilter.fileservice.FileService" ],
+  "title" : "FileService",
+  "mockEnabled" : false
+}

@@ -1,0 +1,5 @@
+.btn[name="doneBtn_wizardSwaggerFilter"] .app-icon:before{
+    content: "\f136";
+    font-family: wm-streamline-regular-icon;
+    font-size: 2em;
+}

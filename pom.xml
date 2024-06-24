@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.wavemaker.app</groupId>
+    <artifactId>wavemaker-app-parent</artifactId>
+    <version>11.7.3</version>
+  </parent>
+  <groupId>com.wavemaker.project</groupId>
+  <artifactId>SwaggerFilter</artifactId>
+  <version>1.0</version>
+  <packaging>war</packaging>
+  <properties>
+    <wavemaker.app.runtime.ui.version>11.7.3-rc.164</wavemaker.app.runtime.ui.version>
+    <wavemaker.artifactType>wmapp</wavemaker.artifactType>
+  </properties>
+  <build>
+    <finalName>SwaggerFilter</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>services/FileService/src</source>
+                <source>services/S3FileManager/src</source>
+                <source>services/securityService/src</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

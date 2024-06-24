@@ -1,0 +1,45 @@
+{
+  "jsFileUploadService" : {
+    "_id" : "wm-jsFileUploadService-wm.ServiceVariable-1689681857918",
+    "name" : "jsFileUploadService",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : true,
+      "target" : "files",
+      "value" : "bind:Widgets.fileupload1.selectedFiles",
+      "type" : "file"
+    } ],
+    "type" : "com.wavemaker.swaggerfilter.fileservice.FileService.FileUploadResponse",
+    "service" : "FileService",
+    "operation" : "uploadFile",
+    "operationId" : "FileController_uploadFile",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "jsFileUploadServiceonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "File"
+  },
+  "stvSwaggerEndPoints" : {
+    "_id" : "wm-stvSwaggerEndPoints-wm.Variable-1689677908252",
+    "name" : "stvSwaggerEndPoints",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "path" : "",
+      "method" : ""
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}
