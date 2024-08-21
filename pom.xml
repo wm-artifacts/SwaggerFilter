@@ -5,14 +5,14 @@
   <parent>
     <groupId>com.wavemaker.app</groupId>
     <artifactId>wavemaker-app-parent</artifactId>
-    <version>11.7.3</version>
+    <version>11.8.1</version>
   </parent>
   <groupId>com.wavemaker.project</groupId>
   <artifactId>SwaggerFilter</artifactId>
   <version>1.0</version>
   <packaging>war</packaging>
   <properties>
-    <wavemaker.app.runtime.ui.version>11.7.3-rc.164</wavemaker.app.runtime.ui.version>
+    <wavemaker.app.runtime.ui.version>11.8.1-rc.182</wavemaker.app.runtime.ui.version>
     <wavemaker.artifactType>wmapp</wavemaker.artifactType>
   </properties>
   <build>

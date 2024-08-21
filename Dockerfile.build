@@ -1,5 +1,5 @@
 # Using the Maven image with Eclipse Temurin JDK 11 as a base image
-FROM maven:3.9.6-eclipse-temurin-11 as maven-java-node
+FROM maven:3.9.8-eclipse-temurin-11 as maven-java-node
 
 # Setting the Maven configuration directory
 ENV MAVEN_CONFIG=~/.m2
